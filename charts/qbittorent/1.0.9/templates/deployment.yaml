@@ -52,7 +52,7 @@ spec:
             {{ $envList = mustAppend $envList (dict "name" "PGID" "value" (printf "%d" (.Values.ownerGID | int))) }}
             {{ $envList = mustAppend $envList (dict "name" "TZ" "value" (printf "%s" .Values.timezone)) }}
             {{ $envList = mustAppend $envList (dict "name" "WEBUI_PORT" "value" (printf "%d" (.Values.web_port | int))) }}
-            {{ if eq .Values.vpn_enabled }}
+            {{ if .Values.vpn_enabled }}
             {{ $envList = mustAppend $envList (dict "name" "VPN_ENABLED" "value" "yes" ) }}
             {{ $envList = mustAppend $envList (dict "name" "VPN_USER" "value" (printf "%s" .Values.vpn_user)) }}
             {{ $envList = mustAppend $envList (dict "name" "VPN_PASS" "value" (printf "%s" .Values.vpn_pass)) }}
