@@ -55,9 +55,8 @@ questions:
     label: "Enable VPN for Qbittorent"
     group: VPN
     schema:
-      type: string
-      default: "yes"
-      options: ["yes", "no"]
+      type: boolean
+      default: true
       required: true
   - variable: vpn_user
     label: "VPN username"
@@ -65,7 +64,7 @@ questions:
     schema:
       type: string
       hidden: true
-      show_if: [["vpn_enabled", "=", "yes"]]
+      show_if: [["vpn_enabled", "=", true]]
       required: true
   - variable: vpn_pass
     label: "VPN password"
@@ -73,7 +72,7 @@ questions:
     schema:
       type: string
       hidden: true
-      show_if: [["vpn_enabled", "=", "yes"]]
+      show_if: [["vpn_enabled", "=", true]]
       required: true
       private: true
   - variable: vpn_prov
@@ -82,7 +81,7 @@ questions:
     schema:
       type: string
       hidden: true
-      show_if: [["vpn_enabled", "=", "yes"]]
+      show_if: [["vpn_enabled", "=", true]]
       options: ["pia","airvpn","custom"]
       default: "pia"
       required: true
@@ -93,7 +92,7 @@ questions:
     schema:
       type: string
       hidden: true
-      show_if: [["vpn_enabled", "=", "yes"]]
+      show_if: [["vpn_enabled", "=", true]]
       options: ["wireguard","openvpn"]
       default: "wireguard"
       required: true
@@ -104,7 +103,7 @@ questions:
     schema:
       type: string
       hidden: true
-      show_if: [["vpn_enabled", "=", "yes"]]
+      show_if: [["vpn_enabled", "=", true]]
       options: ["yes","no"]
       default: "yes"
       required: true
@@ -115,7 +114,7 @@ questions:
     schema:
       type: int
       hidden: true
-      show_if: [["vpn_enabled", "=", "yes"]]
+      show_if: [["vpn_enabled", "=", true]]
       default: 1234
       required: true
   - variable: vpn_output_ports
@@ -124,7 +123,7 @@ questions:
     schema:
       type: int
       hidden: true
-      show_if: [["vpn_enabled", "=", "yes"]]
+      show_if: [["vpn_enabled", "=", true]]
       default: 5678
       required: true
   - variable: vpn_enable_privoxy
@@ -133,7 +132,7 @@ questions:
     schema:
       type: string
       hidden: true
-      show_if: [["vpn_enabled", "=", "yes"]]
+      show_if: [["vpn_enabled", "=", true]]
       options: ["yes","no"]
       default: "yes"
       required: true
@@ -144,7 +143,7 @@ questions:
     schema:
       type: ipaddr
       hidden: true
-      show_if: [["vpn_enabled", "=", "yes"]]
+      show_if: [["vpn_enabled", "=", true]]
       required: true
   - variable: vpn_debug
     label: "Enable debug logging"
@@ -152,7 +151,7 @@ questions:
     schema:
       type: string
       hidden: true
-      show_if: [["vpn_enabled", "=", "yes"]]
+      show_if: [["vpn_enabled", "=", true]]
       required: true
       options: ["true", "false"]
       default: "false"
