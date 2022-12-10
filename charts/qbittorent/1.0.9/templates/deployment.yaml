@@ -53,7 +53,7 @@ spec:
             {{ $envList = mustAppend $envList (dict "name" "TZ" "value" (printf "%s" .Values.timezone)) }}
             {{ $envList = mustAppend $envList (dict "name" "WEBUI_PORT" "value" (printf "%d" (.Values.web_port | int))) }}
             {{ if eq .Values.vpn_enabled }}
-            {{ $envList = mustAppend $envList (dict "name" "VPN_ENABLED" "value" "yes" }}
+            {{ $envList = mustAppend $envList (dict "name" "VPN_ENABLED" "value" "yes" ) }}
             {{ $envList = mustAppend $envList (dict "name" "VPN_USER" "value" (printf "%s" .Values.vpn_user)) }}
             {{ $envList = mustAppend $envList (dict "name" "VPN_PASS" "value" (printf "%s" .Values.vpn_pass)) }}
             {{ $envList = mustAppend $envList (dict "name" "VPN_PROV" "value" (printf "%s" .Values.vpn_prov)) }}
@@ -65,7 +65,7 @@ spec:
             {{ $envList = mustAppend $envList (dict "name" "LAN_NETWORK" "value" (printf "%s" .Values.vpn_lan_network)) }}
             {{ $envList = mustAppend $envList (dict "name" "DEBUG" "value" (printf "%s" .Values.vpn_debug)) }}
             {{ else }}
-            {{ $envList = mustAppend $envList (dict "name" "VPN_ENABLED" "value" "no" }}
+            {{ $envList = mustAppend $envList (dict "name" "VPN_ENABLED" "value" "no" ) }}
             {{ end}}
             {{ include "common.containers.environmentVariables" (dict "environmentVariables" $envList) | nindent 12 }}
 {{ include "common.networking.dnsConfiguration" .Values | nindent 6 }}
