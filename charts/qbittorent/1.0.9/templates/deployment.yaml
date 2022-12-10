@@ -37,6 +37,10 @@ spec:
             - name: extrappvolume-{{ $index }}
               mountPath: {{ $hostPathConfiguration.mountPath }}
           {{ end }}
+{{ if .Values.vpn_enabled }}
+          securityContext:
+            privileged: true
+{{ end}}
           ports:
             - name: web
               containerPort: {{ .Values.web_port }}
