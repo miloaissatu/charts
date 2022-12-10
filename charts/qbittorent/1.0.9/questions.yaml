@@ -135,7 +135,7 @@ questions:
     group: VPN
     schema:
       show_if: [["vpn_enabled", "=", true]]
-      type: ipaddr
+      type: string
       required: true
   - variable: vpn_debug
     label: "Enable debug logging"
