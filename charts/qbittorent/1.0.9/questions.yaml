@@ -147,11 +147,12 @@ questions:
       options: ["true", "false"]
       default: "false"
   - variable: vpn_dns
-    label: "DNS servers for VPN"
+    label: "DNS for VPN"
     group: VPN
     schema:
       show_if: [["vpn_enabled", "=", true]]
       type: string
+      default: 84.200.69.80,37.235.1.174,1.1.1.1,37.235.1.177,84.200.70.40,1.0.0.1
 
   - variable: dnsConfig
     label: "DNS Configuration"
