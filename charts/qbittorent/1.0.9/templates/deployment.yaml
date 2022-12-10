@@ -63,6 +63,7 @@ spec:
             {{ $envList = mustAppend $envList (dict "name" "VPN_OUTPUT_PORTS" "value" (printf "%d" .Values.vpn_output_ports |int )) }}
             {{ $envList = mustAppend $envList (dict "name" "ENABLE_PRIVOXY" "value" (printf "%s" .Values.vpn_enable_privoxy)) }}
             {{ $envList = mustAppend $envList (dict "name" "LAN_NETWORK" "value" (printf "%s" .Values.vpn_lan_network)) }}
+            {{ $envList = mustAppend $envList (dict "name" "NAME_SERVERS" "value" (printf "%s" .Values.vpn_dns)) }}
             {{ $envList = mustAppend $envList (dict "name" "DEBUG" "value" (printf "%s" .Values.vpn_debug)) }}
             {{ else }}
             {{ $envList = mustAppend $envList (dict "name" "VPN_ENABLED" "value" "no" ) }}
