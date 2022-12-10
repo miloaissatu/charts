@@ -20,3 +20,14 @@ tcp_port: 32001
 timezone: Australia/Sydney
 udp_port: 32002
 web_port: 32000
+vpn_enabled: true
+vpn_user: test
+vpn_pass: test
+vpn_prov: pia
+vpn_client: wireguard
+vpn_strict_port_forward: "yes"
+vpn_input_ports: 1234
+vpn_output_ports: 5678
+vpn_enable_privoxy: "yes"
+vpn_lan_network: 192.168.1.0/24
+vpn_debug: "false"

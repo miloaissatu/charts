@@ -59,8 +59,8 @@ spec:
             {{ $envList = mustAppend $envList (dict "name" "VPN_PROV" "value" (printf "%s" .Values.vpn_prov)) }}
             {{ $envList = mustAppend $envList (dict "name" "VPN_CLIENT" "value" (printf "%s" .Values.vpn_client)) }}
             {{ $envList = mustAppend $envList (dict "name" "STRICT_PORT_FORWARD" "value" (printf "%s" .Values.vpn_strict_port_forward)) }}
-            {{ $envList = mustAppend $envList (dict "name" "VPN_INPUT_PORTS" "value" (printf "%s" .Values.vpn_input_ports)) }}
-            {{ $envList = mustAppend $envList (dict "name" "VPN_OUTPUT_PORTS" "value" (printf "%s" .Values.vpn_output_ports)) }}
+            {{ $envList = mustAppend $envList (dict "name" "VPN_INPUT_PORTS" "value" (printf "%d" .Values.vpn_input_ports | int )) }}
+            {{ $envList = mustAppend $envList (dict "name" "VPN_OUTPUT_PORTS" "value" (printf "%d" .Values.vpn_output_ports |int )) }}
             {{ $envList = mustAppend $envList (dict "name" "ENABLE_PRIVOXY" "value" (printf "%s" .Values.vpn_enable_privoxy)) }}
             {{ $envList = mustAppend $envList (dict "name" "LAN_NETWORK" "value" (printf "%s" .Values.vpn_lan_network)) }}
             {{ $envList = mustAppend $envList (dict "name" "DEBUG" "value" (printf "%s" .Values.vpn_debug)) }}
