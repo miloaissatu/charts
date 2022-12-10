@@ -54,89 +54,98 @@ questions:
   
   - variable: vpn_enabled
     label: "Enable VPN for Qbittorent"
+    group: VPN
     schema:
       type: boolean
       default: true
       required: true
-      show_subquestions_if: true
-      subquestions:
-        - variable: vpn_user
-          label: "VPN username"
-          schema:
-            type: string
-            hidden: true
-            required: true
-        - variable: vpn_pass
-          label: "VPN password"
-          schema:
-            type: string
-            hidden: true
-            required: true
-            private: true
-        - variable: vpn_prov
-          label: "VPN provider"
-          schema:
-            type: string
-            hidden: true
-            options: ["pia","airvpn","custom"]
-            default: "pia"
-            required: true
-            editable: false
-        - variable: vpn_client
-          label: "VPN client"
-          schema:
-            type: string
-            hidden: true
-            options: ["wireguard","openvpn"]
-            default: "wireguard"
-            required: true
-            editable: false
-        - variable: vpn_strict_port_forward
-          label: "VPN strict port forward"
-          schema:
-            type: string
-            hidden: true
-            options: ["yes","no"]
-            default: "yes"
-            required: true
-            editable: false
-        - variable: vpn_input_ports
-          label: "VPN input ports"
-          schema:
-            type: int
-            hidden: true
-            default: 1234
-            required: true
-        - variable: vpn_output_ports
-          label: "VPN output ports"
-          schema:
-            type: int
-            hidden: true
-            default: 5678
-            required: true
-        - variable: vpn_enable_privoxy
-          label: "Enable Privoxy"
-          schema:
-            type: string
-            hidden: true
-            options: ["yes","no"]
-            default: "yes"
-            required: true
-            editable: false
-        - variable: vpn_lan_network
-          label: "LAN CIDR"
-          schema:
-            type: ipaddr
-            hidden: true
-            required: true
-        - variable: vpn_debug
-          label: "Enable debug logging"
-          schema:
-            type: string
-            hidden: true
-            required: true
-            options: ["true", "false"]
-            default: "false"
+  - variable: vpn_user
+    label: "VPN username"
+    group: VPN
+    schema:
+      show_if: [["vpn_enabled", "=", true]]
+      type: string
+      required: true
+  - variable: vpn_pass
+    label: "VPN password"
+    group: VPN
+    schema:
+      show_if: [["vpn_enabled", "=", true]]
+      type: string
+      required: true
+      private: true
+  - variable: vpn_prov
+    label: "VPN provider"
+    group: VPN
+    schema:
+      show_if: [["vpn_enabled", "=", true]]
+      type: string
+      options: ["pia","airvpn","custom"]
+      default: "pia"
+      required: true
+      editable: false
+  - variable: vpn_client
+    label: "VPN client"
+    group: VPN
+    schema:
+      show_if: [["vpn_enabled", "=", true]]
+      type: string
+      options: ["wireguard","openvpn"]
+      default: "wireguard"
+      required: true
+      editable: false
+  - variable: vpn_strict_port_forward
+    label: "VPN strict port forward"
+    group: VPN
+    schema:
+      show_if: [["vpn_enabled", "=", true]]
+      type: string
+      options: ["yes","no"]
+      default: "yes"
+      required: true
+      editable: false
+  - variable: vpn_input_ports
+    label: "VPN input ports"
+    group: VPN
+    schema:
+      show_if: [["vpn_enabled", "=", true]]
+      type: int
+      default: 1234
+      required: true
+  - variable: vpn_output_ports
+    label: "VPN output ports"
+    group: VPN
+    schema:
+      show_if: [["vpn_enabled", "=", true]]
+      type: int
+      default: 5678
+      required: true
+  - variable: vpn_enable_privoxy
+    label: "Enable Privoxy"
+    group: VPN
+    schema:
+      show_if: [["vpn_enabled", "=", true]]
+      type: string
+      options: ["yes","no"]
+      default: "yes"
+      required: true
+      editable: false
+  - variable: vpn_lan_network
+    label: "LAN CIDR"
+    group: VPN
+    schema:
+      show_if: [["vpn_enabled", "=", true]]
+      type: ipaddr
+      required: true
+  - variable: vpn_debug
+    label: "Enable debug logging"
+    group: VPN
+    schema:
+      show_if: [["vpn_enabled", "=", true]]
+      type: string
+      required: true
+      options: ["true", "false"]
+      default: "false"
 
   - variable: dnsConfig
     label: "DNS Configuration"
