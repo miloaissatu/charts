@@ -53,9 +53,9 @@
             "location": "/__w/charts/charts/charts/qbittorent",
             "healthy": true,
             "healthy_error": null,
-            "latest_version": "1.0.9",
+            "latest_version": "1.0.10",
             "latest_app_version": "4.5.0",
-            "latest_human_version": "4.5.0_1.0.9",
+            "latest_human_version": "4.5.0_1.0.10",
             "icon_url": "https://github.com/linuxserver/docker-templates/raw/master/linuxserver.io/img/qbittorrent-icon.png"
         },
         "plex": {
