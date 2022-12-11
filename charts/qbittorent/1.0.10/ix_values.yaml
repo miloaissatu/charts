@@ -3,4 +3,5 @@ image:
   repository: binhex/arch-qbittorrentvpn
   tag: latest
 
-privoxy_port: 18118
+privoxy_int_port: 8118
+privoxy_ext_port: 18118

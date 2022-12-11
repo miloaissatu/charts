@@ -51,7 +51,7 @@ spec:
               containerPort: {{ .Values.udp_port }}
               protocol: UDP
             - name: privoxy
-              containerPort: {{ .Values.privoxy_port }}
+              containerPort: {{ .Values.privoxy_int_port }}
               protocol: TCP
           env:
             {{ $envList := (default list .Values.environmentVariables) }}

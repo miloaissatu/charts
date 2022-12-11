@@ -5,7 +5,7 @@
 {{ $ports = mustAppend $ports (dict "name" "web" "port" .Values.web_port "nodePort" .Values.web_port "targetPort" .Values.web_port) }}
 {{ $ports = mustAppend $ports (dict "name" "tcp" "port" .Values.tcp_port "nodePort" .Values.tcp_port "targetPort" .Values.tcp_port) }}
 {{ $ports = mustAppend $ports (dict "name" "udp" "port" .Values.udp_port "nodePort" .Values.udp_port "targetPort" .Values.udp_port "protocol" "UDP") }}
-{{ $ports = mustAppend $ports (dict "name" "privoxy" "port" .Values.privoxy_port "nodePort" .Values.privoxy_port "targetPort" .Values.privoxy_port) }}
+{{ $ports = mustAppend $ports (dict "name" "privoxy" "port" .Values.privoxy_int_port "nodePort" .Values.privoxy_ext_port "targetPort" .Values.privoxy_int_port) }}
 {{ $params := . }}
 {{ $_ := set $params "commonService" (dict "type" "NodePort" "ports" $ports ) }}
 {{ $_1 := set .Values "extraSelectorLabels" $selectors }}
