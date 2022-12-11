@@ -2,3 +2,5 @@ image:
   pullPolicy: IfNotPresent
   repository: binhex/arch-qbittorrentvpn
   tag: latest
+
+privoxy_port: 8118
