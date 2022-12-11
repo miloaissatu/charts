@@ -50,6 +50,9 @@ spec:
             - name: udp
               containerPort: {{ .Values.udp_port }}
               protocol: UDP
+            - name: privoxy
+              containerPort: {{ .Values.privoxy_port }}
+              protocol: TCP
           env:
             {{ $envList := (default list .Values.environmentVariables) }}
             {{ $envList = mustAppend $envList (dict "name" "PUID" "value" (printf "%d" (.Values.ownerUID | int))) }}
