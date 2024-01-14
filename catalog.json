@@ -1,5 +1,5 @@
 {
-    "charts": {
+    "stable": {
         "netdata": {
             "name": "netdata",
             "categories": [
@@ -100,6 +100,26 @@
             "latest_app_version": "2022-11-10",
             "latest_human_version": "2022-11-10_1.6.62",
             "icon_url": "https://min.io/resources/img/logo/MINIO_wordmark.png"
+        },
+        "tcqbittorrent": {
+            "app_readme": "<p>qBittorrent is a cross-platform free and open-source BitTorrent client</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/qbittorrent\">https://truecharts.org/charts/stable/qbittorrent</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
+            "categories": [
+                "media"
+            ],
+            "description": "qBittorrent is a cross-platform free and open-source BitTorrent client",
+            "healthy": true,
+            "healthy_error": null,
+            "location": "/__w/charts/charts/charts/tcqbittorent",
+            "latest_version": "18.1.6",
+            "latest_app_version": "4.6.2",
+            "latest_human_version": "4.6.2_18.1.6",
+            "last_update": "2024-01-14 06:23:56",
+            "name": "tcqbittorrent",
+            "recommended": false,
+            "title": "tcQbittorrent",
+            "tags": [],
+            "screenshots": [],
+            "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/qbittorrent.png"
         }
     },
     "test": {}
